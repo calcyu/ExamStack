@@ -26,6 +26,7 @@ request.setAttribute("leftMenuId",list[3]);
 		<meta name="keywords" content="">
 		<link rel="shortcut icon" href="<%=basePath%>resources/images/favicon.ico" />
 		<link href="resources/bootstrap/css/bootstrap-huan.css" rel="stylesheet">
+		<link href="resources/bootstrap/css/bootstrap-markdown-editor.css" rel="stylesheet">
 		<link href="resources/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 		<link href="resources/css/style.css" rel="stylesheet">
 		
@@ -179,7 +180,7 @@ request.setAttribute("leftMenuId",list[3]);
 								
 								<div class="form-line question-content">
 									<span class="form-label"><span class="warning-label">*</span>试题内容：</span>
-									<textarea class="add-question-ta"></textarea>									
+									<textarea id="aaaa" class="add-question-ta"></textarea>
 									<span class="add-img add-content-img" style="width:100px;">添加图片</span>
 									<span class="form-message"></span>
 								</div>
@@ -346,6 +347,19 @@ request.setAttribute("leftMenuId",list[3]);
 		
 		<!-- Bootstrap JS -->
 		<script type="text/javascript" src="resources/bootstrap/js/bootstrap.min.js"></script>
-		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+		<script type="text/javascript" src="resources/bootstrap/js/bootstrap-markdown-editor.js"></script>
+	<script>
+		$(function(){
+			$('#aaaa').markdownEditor({
+				preview: true,
+				onPreview: function (content, callback) {
+					callback( marked(content) );
+				}
+			});
+		})
+	</script>
+
 	</body>
 </html>

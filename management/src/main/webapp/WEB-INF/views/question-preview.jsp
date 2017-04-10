@@ -190,8 +190,13 @@
 	<!-- Bootstrap JS -->
 	<script type="text/javascript"
 		src="resources/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/marked/0.3.2/marked.min.js"></script>
+	<script type="text/javascript" src="resources/bootstrap/js/bootstrap-markdown-editor.js"></script>
 	<script>
 		$(function() {
+			$(".md-preview").html(marked($(".md-preview").text()));
 			$("#delete-question-btn").click(
 					function() {
 						var result = confirm("确定删除吗？删除后将不可恢复");
