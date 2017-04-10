@@ -770,7 +770,12 @@ public class QuestionAdapter {
 					.append(questionQueryResult.getQuestionId()).append("</span>");
 			sb.append("</div>");
 			sb.append("<form class=\"question-body\">");
-			sb.append("<p class=\"question-body-text\">").append(questionContent.getTitle());
+			sb.append("<p class=\"question-body-text\">");
+			sb.append("<div class=\"md-container\">");
+			sb.append("<div class=\"md-preview\">");
+			sb.append(questionContent.getTitle());
+			sb.append("</div>");
+			sb.append("</div>");
 			if (questionContent.getTitleImg() != null)
 				if (!questionContent.getTitleImg().trim().equals(""))
 					sb.append(
